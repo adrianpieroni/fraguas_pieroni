@@ -1,0 +1,306 @@
+/* ==========================================
+   1. RESETEO Y VARIABLES GLOBALES
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+    --color-fondo: #121212;       /* Negro oscuro de forja */
+    --color-superficie: #1e1e1e;   /* Gris oscuro para tarjetas */
+    --color-principal: #ff4500;    /* Naranja fuego/óxido */
+    --color-secundario: #e03d00;   /* Naranja más oscuro para interacciones */
+    --color-texto: #ffffff;        /* Blanco para títulos */
+    --color-mutado: #b3b3b3;       /* Gris claro para textos secundarios */
+    --color-whatsapp: #25d366;     /* Verde oficial de WhatsApp */
+}
+
+body {
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    line-height: 1.6;
+}
+
+/* ==========================================
+   2. BARRA DE NAVEGACIÓN (HEADER)
+   ========================================== */
+header {
+    background-color: var(--color-superficie);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 10%;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 2px solid var(--color-principal);
+}
+
+header .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+header .logo span {
+    color: var(--color-principal);
+}
+
+header nav a {
+    color: var(--color-texto);
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+header nav a:hover {
+    color: var(--color-principal);
+}
+
+/* ==========================================
+   3. SECCIÓN DE BIENVENIDA (HERO)
+   ========================================== */
+.hero {
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px;
+    background: linear-gradient(rgba(18, 18, 18, 0.8), rgba(18, 18, 18, 0.95)), 
+                url('https://images.unsplash.com/photo-1534224039826-c7a0dea0e66a?q=80&w=1200') no-repeat center center/cover;
+}
+
+.contenido-hero h1 {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+    color: var(--color-texto);
+}
+
+.contenido-hero p {
+    font-size: 1.2rem;
+    color: var(--color-mutado);
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+}
+
+.btn-primario {
+    background-color: var(--color-principal);
+    color: var(--color-texto);
+    padding: 12px 30px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    text-transform: uppercase;
+    transition: background 0.3s ease;
+}
+
+.btn-primario:hover {
+    background-color: var(--color-secundario);
+}
+
+/* ==========================================
+   4. CATÁLOGO DE PRODUCTOS (GRILLA)
+   ========================================== */
+.productos {
+    padding: 60px 10%;
+    text-align: center;
+}
+
+.productos h2 {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+}
+
+.productos .subtitulo {
+    color: var(--color-principal);
+    margin-bottom: 40px;
+    font-weight: 600;
+}
+
+.grilla-productos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.tarjeta-producto {
+    background-color: var(--color-superficie);
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 25px;
+    width: 100%;
+    max-width: 400px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.tarjeta-producto:hover {
+    transform: translateY(-5px);
+    border-color: var(--color-principal);
+}
+
+.imagen-placeholder {
+    background-color: #2a2a2a;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    color: var(--color-mutado);
+    font-weight: bold;
+}
+
+.tarjeta-producto h3 {
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+}
+
+.tarjeta-producto p {
+    color: var(--color-mutado);
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+}
+
+.tarjeta-producto ul {
+    list-style: none;
+    margin-bottom: 25px;
+}
+
+.tarjeta-producto ul li {
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+    color: var(--color-mutado);
+}
+
+.tarjeta-producto ul li strong {
+    color: var(--color-texto);
+}
+
+.btn-consultar {
+    display: block;
+    text-align: center;
+    background-color: transparent;
+    color: var(--color-principal);
+    border: 2px solid var(--color-principal);
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.btn-consultar:hover {
+    background-color: var(--color-principal);
+    color: var(--color-texto);
+}
+
+/* ==========================================
+   5. CARACTERÍSTICAS Y CONTACTO
+   ========================================== */
+.caracteristicas {
+    background-color: #1a1a1a;
+    padding: 60px 10%;
+    text-align: center;
+}
+
+.caracteristicas h2 {
+    margin-bottom: 40px;
+}
+
+.bloques-calidad {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.bloque {
+    background-color: var(--color-fondo);
+    padding: 30px;
+    border-radius: 6px;
+    max-width: 450px;
+    text-align: left;
+    border-left: 4px solid var(--color-principal);
+}
+
+.bloque h3 {
+    margin-bottom: 10px;
+}
+
+.bloque p {
+    color: var(--color-mutado);
+}
+
+.contacto {
+    padding: 60px 10%;
+    text-align: center;
+}
+
+.contacto h2 {
+    margin-bottom: 15px;
+}
+
+.contacto p {
+    color: var(--color-mutado);
+    margin-bottom: 30px;
+}
+
+.botones-contacto {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.btn-whatsapp {
+    background-color: var(--color-whatsapp);
+    color: white;
+    padding: 12px 25px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: opacity 0.3s;
+}
+
+.btn-instagram {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    color: white;
+    padding: 12px 25px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: opacity 0.3s;
+}
+
+.btn-whatsapp:hover, .btn-instagram:hover {
+    opacity: 0.9;
+}
+
+/* ==========================================
+   6. FOOTER
+   ========================================== */
+footer {
+    background-color: var(--color-superficie);
+    padding: 30px 10%;
+    text-align: center;
+    border-top: 1px solid #333;
+    font-size: 0.9rem;
+    color: var(--color-mutado);
+}
+
+footer .creditos {
+    margin-top: 10px;
+    font-size: 0.8rem;
+    color: var(--color-principal);
+}
