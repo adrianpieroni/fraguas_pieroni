@@ -6,8 +6,10 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+    /* --- ESTA ES LA LÍNEA QUE LO SOLUCIONA --- */
+    scroll-margin-top: 80px; 
 }
-
 :root {
     --color-fondo: #121212;       /* Negro oscuro de forja */
     --color-superficie: #1e1e1e;   /* Gris oscuro para tarjetas */
@@ -32,18 +34,30 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.5rem 10%;
+    padding: 1rem 10%;
     position: sticky;
     top: 0;
     z-index: 100;
     border-bottom: 2px solid var(--color-principal);
 }
 
+/* Contenedor del Logo (Imagen + Letras) */
 header .logo {
+    display: flex;         /* Alinea el fuego al lado de las letras */
+    align-items: center;   /* Centrado vertical simétrico */
+    gap: 12px;             /* Separación exacta entre el dibujo y el texto */
     font-size: 1.5rem;
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 1px;
+    flex-shrink: 0;        /* Evita que el contenedor del logo se deforme o achique */
+}
+
+/* Control estricto del tamaño de la imagen */
+header .logo .logo-img {
+    height: 40px;          /* Bajé un toque a 40px para que sea más estilizado y no empuje el header */
+    width: auto;           /* Mantiene las proporciones originales del logo */
+    display: block;
 }
 
 header .logo span {
