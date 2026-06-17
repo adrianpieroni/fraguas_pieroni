@@ -62,6 +62,11 @@ header nav a:hover {
     color: var(--color-principal);
 }
 
+/* OCULTAR EL BOTÓN HAMBURGUESA EN COMPUTADORAS */
+.menu-hamburger {
+    display: none;
+}
+
 /* ==========================================
    3. SECCIÓN DE BIENVENIDA (HERO)
    ========================================== */
@@ -305,7 +310,7 @@ footer .creditos {
     color: var(--color-principal);
 }
 
-* ==========================================
+/* ==========================================
    7. OPTIMIZACIÓN PARA CELULARES (RESPONSIVE)
    ========================================== */
 @media (max-width: 768px) {
@@ -313,7 +318,7 @@ footer .creditos {
         padding: 1rem 5%;
     }
 
-    /* Mostrar el botón hamburguesa */
+    /* Mostrar el botón hamburguesa en móviles */
     .menu-hamburger {
         display: flex;
         flex-direction: column;
@@ -326,32 +331,31 @@ footer .creditos {
         z-index: 110;
     }
 
+    /* Las tres líneas del botón en color naranja principal */
     .menu-hamburger span {
         width: 100%;
         height: 3px;
-        background-color: var(--color-texto);
+        background-color: var(--color-principal);
         border-radius: 2px;
         transition: all 0.3s ease;
     }
 
-    /* Animación de las rayitas transformándose en una X al abrirse */
+    /* Animación de las rayitas convirtiéndose en X */
     .menu-hamburger.active span:nth-child(1) {
         transform: translateY(9px) rotate(45deg);
-        background-color: var(--color-principal);
     }
     .menu-hamburger.active span:nth-child(2) {
         opacity: 0;
     }
     .menu-hamburger.active span:nth-child(3) {
         transform: translateY(-9px) rotate(-45deg);
-        background-color: var(--color-principal);
     }
 
-    /* Esconder el menú original y transformarlo en cortina vertical */
+    /* Menú móvil tipo cortina lateral */
     header nav {
         position: fixed;
         top: 0;
-        right: -100%; /* Escondido a la derecha fuera de pantalla */
+        right: -100%; /* Escondido por defecto */
         width: 70%;
         height: 100vh;
         background-color: var(--color-superficie);
@@ -365,7 +369,7 @@ footer .creditos {
         z-index: 105;
     }
 
-    /* Clase que inyecta JavaScript para abrir la cortina */
+    /* Clase que inyecta JS al abrir el menú */
     header nav.open {
         right: 0;
     }
@@ -378,18 +382,38 @@ footer .creditos {
         padding: 10px 0;
     }
 
-    /* Ajustes generales de contenido */
-    .contenido-hero h1 { font-size: 2rem; }
-    .contenido-hero p { font-size: 1rem; }
-    .productos, .caracteristicas, .contacto { padding: 40px 5%; }
-    .tarjeta-producto { max-width: 100%; }
-    .botones-contacto { flex-direction: column; width: 100%; gap: 12px; }
-    .btn-whatsapp, .btn-instagram { display: block; width: 100%; text-align: center; padding: 14px; font-size: 1.05rem; }
-}
+    /* Modificaciones generales de escala en celular */
+    .contenido-hero h1 {
+        font-size: 2rem;
+    }
 
-/* Regla extra para asegurar que el botón hamburguesa no se vea en computadoras */
-@media (min-width: 769px) {
-    .menu-hamburger {
-        display: none;
+    .contenido-hero p {
+        font-size: 1rem;
+    }
+
+    .productos, .caracteristicas, .contacto {
+        padding: 40px 5%;
+    }
+
+    .grilla-productos {
+        gap: 20px;
+    }
+
+    .tarjeta-producto {
+        max-width: 100%;
+    }
+
+    .botones-contacto {
+        flex-direction: column;
+        width: 100%;
+        gap: 12px;
+    }
+
+    .btn-whatsapp, .btn-instagram {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 14px;
+        font-size: 1.05rem;
     }
 }
