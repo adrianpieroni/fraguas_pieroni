@@ -304,3 +304,64 @@ footer .creditos {
     font-size: 0.8rem;
     color: var(--color-principal);
 }
+
+/* ==========================================
+   7. OPTIMIZACIÓN PARA CELULARES (RESPONSIVE)
+   ========================================== */
+@media (max-width: 768px) {
+    /* Ajustes en la barra de navegación */
+    header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 1.2rem 5%;
+        text-align: center;
+    }
+
+    header nav {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    header nav a {
+        margin: 0 10px;
+        font-size: 0.95rem;
+    }
+
+    /* Ajustes en la bienvenida (Hero) */
+    .contenido-hero h1 {
+        font-size: 2rem;
+    }
+
+    .contenido-hero p {
+        font-size: 1rem;
+    }
+
+    /* Ajustes en las secciones y grillas */
+    .productos, .caracteristicas, .contacto {
+        padding: 40px 5%;
+    }
+
+    .grilla-productos {
+        gap: 20px;
+    }
+
+    .tarjeta-producto {
+        max-width: 100%; /* La tarjeta ocupa todo el ancho del celular */
+    }
+
+    /* Botones más grandes para interacción táctil */
+    .botones-contacto {
+        flex-direction: column;
+        width: 100%;
+        gap: 12px;
+    }
+
+    .btn-whatsapp, .btn-instagram {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 14px; /* Más grueso para el dedo */
+        font-size: 1.05rem;
+    }
+}
