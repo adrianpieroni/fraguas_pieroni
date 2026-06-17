@@ -305,63 +305,91 @@ footer .creditos {
     color: var(--color-principal);
 }
 
-/* ==========================================
+* ==========================================
    7. OPTIMIZACIÓN PARA CELULARES (RESPONSIVE)
    ========================================== */
 @media (max-width: 768px) {
-    /* Ajustes en la barra de navegación */
     header {
-        flex-direction: column;
-        gap: 15px;
-        padding: 1.2rem 5%;
-        text-align: center;
+        padding: 1rem 5%;
     }
 
-    header nav {
+    /* Mostrar el botón hamburguesa */
+    .menu-hamburger {
         display: flex;
-        justify-content: center;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 21px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        z-index: 110;
+    }
+
+    .menu-hamburger span {
         width: 100%;
+        height: 3px;
+        background-color: var(--color-texto);
+        border-radius: 2px;
+        transition: all 0.3s ease;
+    }
+
+    /* Animación de las rayitas transformándose en una X al abrirse */
+    .menu-hamburger.active span:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+        background-color: var(--color-principal);
+    }
+    .menu-hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+    .menu-hamburger.active span:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+        background-color: var(--color-principal);
+    }
+
+    /* Esconder el menú original y transformarlo en cortina vertical */
+    header nav {
+        position: fixed;
+        top: 0;
+        right: -100%; /* Escondido a la derecha fuera de pantalla */
+        width: 70%;
+        height: 100vh;
+        background-color: var(--color-superficie);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        transition: right 0.4s ease;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.5);
+        z-index: 105;
+    }
+
+    /* Clase que inyecta JavaScript para abrir la cortina */
+    header nav.open {
+        right: 0;
     }
 
     header nav a {
-        margin: 0 10px;
-        font-size: 0.95rem;
-    }
-
-    /* Ajustes en la bienvenida (Hero) */
-    .contenido-hero h1 {
-        font-size: 2rem;
-    }
-
-    .contenido-hero p {
-        font-size: 1rem;
-    }
-
-    /* Ajustes en las secciones y grillas */
-    .productos, .caracteristicas, .contacto {
-        padding: 40px 5%;
-    }
-
-    .grilla-productos {
-        gap: 20px;
-    }
-
-    .tarjeta-producto {
-        max-width: 100%; /* La tarjeta ocupa todo el ancho del celular */
-    }
-
-    /* Botones más grandes para interacción táctil */
-    .botones-contacto {
-        flex-direction: column;
-        width: 100%;
-        gap: 12px;
-    }
-
-    .btn-whatsapp, .btn-instagram {
-        display: block;
+        margin: 0;
+        font-size: 1.3rem;
         width: 100%;
         text-align: center;
-        padding: 14px; /* Más grueso para el dedo */
-        font-size: 1.05rem;
+        padding: 10px 0;
+    }
+
+    /* Ajustes generales de contenido */
+    .contenido-hero h1 { font-size: 2rem; }
+    .contenido-hero p { font-size: 1rem; }
+    .productos, .caracteristicas, .contacto { padding: 40px 5%; }
+    .tarjeta-producto { max-width: 100%; }
+    .botones-contacto { flex-direction: column; width: 100%; gap: 12px; }
+    .btn-whatsapp, .btn-instagram { display: block; width: 100%; text-align: center; padding: 14px; font-size: 1.05rem; }
+}
+
+/* Regla extra para asegurar que el botón hamburguesa no se vea en computadoras */
+@media (min-width: 769px) {
+    .menu-hamburger {
+        display: none;
     }
 }
