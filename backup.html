@@ -6,38 +6,37 @@
     <title>Fraguas Pieroni | Alto Rendimiento Térmico</title>
 
     <link rel="icon" type="image/x-icon" href="images/logo.ico">
+    
     <link rel="icon" type="image/svg+xml" href="images/logo.png">
-    
+    <!-- Vinculación del archivo de estilos -->
     <link rel="stylesheet" href="styles.css">
-    
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    
-   
 </head>
 <body>
 
-    <header>
-        <div class="logo">
-            <img src="images/logo.png" alt="Logo Fraguas Pieroni" class="logo-img">
-            <div class="logo-text">
-                <span>Fraguas</span> Pieroni
-            </div>
+    <!-- BARRA DE NAVEGACIÓN -->
+<header>
+    <div class="logo">
+        <img src="images/logo.png" alt="Logo Fraguas Pieroni" class="logo-img">
+        <div class="logo-text">
+            <span>Fraguas</span> Pieroni
         </div>
-        
-        <button class="menu-hamburger" id="btn-menu" aria-label="Abrir menú">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
+    </div>
+    
+    <button class="menu-hamburger" id="btn-menu" aria-label="Abrir menú">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
 
-        <nav id="nav-links">
-            <a href="#inicio">Inicio</a>
-            <a href="#productos">Modelos</a>
-            <a href="#caracteristicas">Características</a>
-            <a href="#contacto">Contacto</a>
-        </nav>
-    </header>
+    <nav id="nav-links">
+        <a href="#inicio">Inicio</a>
+        <a href="#productos">Modelos</a>
+        <a href="#caracteristicas">Características</a>
+        <a href="#contacto">Contacto</a>
+    </nav>
+</header>
 
+    <!-- SECCIÓN DE BIENVENIDA (HERO) -->
     <section id="inicio" class="hero">
         <div class="contenido-hero">
             <h1>Potencia, Eficiencia y Durabilidad para tu Taller</h1>
@@ -46,24 +45,15 @@
         </div>
     </section>
 
+    <!-- CATÁLOGO DE PRODUCTOS -->
     <section id="productos" class="productos">
         <h2>Nuestros Modelos</h2>
         <p class="subtitulo">Equipos estandarizados y trabajos a medida</p>
         
         <div class="grilla-productos">
+            <!-- Producto 1 -->
             <div class="tarjeta-producto">
-                <div class="swiper miCarrusel">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide"><img src="images/Fragua 1_1.jpeg" alt="Fragua Hobby Vista General"></div>
-                        <div class="swiper-slide"><img src="images/Fragua 1_2.jpeg" alt="Fragua Hobby Detalle Quemador"></div>
-                        <div class="swiper-slide"><img src="images/Fragua 1_3.jpeg" alt="Fragua Hobby Interior Refractario"></div>
-                        <div class="swiper-slide"><img src="images/Fragua 1_4.jpeg" alt="Fragua Hobby Vista Lateral"></div>
-                    </div>
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
-                    <div class="swiper-pagination"></div>
-                </div>
-
+                <div class="imagen-placeholder">🔥 [Foto Fragua 1 Quemador]</div>
                 <h3>Fragua Hobby - 1 Quemador</h3>
                 <p>Ideal para iniciarse en la herrería, trabajos de torsión y cuchillería artesanal. Alcanza rápidamente los 1200°C.</p>
                 <ul>
@@ -74,6 +64,7 @@
                 <a href="https://api.whatsapp.com/send?phone=5492914025892" target="_blank" class="btn-whatsapp">Escribinos por WhatsApp</a>
             </div>
 
+            <!-- Producto 2 -->
             <div class="tarjeta-producto">
                 <div class="imagen-placeholder">🔥 [Foto Fragua 2 Quemadores]</div>
                 <h3>Fragua Pro - 2 Quemadores</h3>
@@ -88,6 +79,7 @@
         </div>
     </section>
 
+    <!-- DIFERENCIALES / CALIDAD -->
     <section id="caracteristicas" class="caracteristicas">
         <h2>¿Por qué elegir Fraguas Pieroni?</h2>
         <div class="bloques-calidad">
@@ -102,6 +94,7 @@
         </div>
     </section>
 
+    <!-- CONTACTO Y REDES -->
     <section id="contacto" class="contacto">
         <h2>¿Listo para dar el salto en tu taller?</h2>
         <p>Contactanos para coordinar stock, envíos o encargar un diseño personalizado.</p>
@@ -111,27 +104,13 @@
         </div>
     </section>
 
+    <!-- PIE DE PÁGINA -->
     <footer>
         <p>&copy; 2026 Fraguas Pieroni. Fabricación de Herramientas de Forja.</p>
         <p class="creditos">Desarrollado por <a href="https://github.com/adrianpieroni" target="_blank" style="color: inherit; text-decoration: underline;">Adrián Pieroni</a></p>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    
-    <script>
-        const swiper = new Swiper('.miCarrusel', {
-            loop: true, // Hace que sea infinito
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true, // Permite hacer clic en los puntitos
-            },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-        });
-    </script>
-
+    <!-- Conexión del script de lógica del menú -->
     <script src="script.js"></script>
 </body>
 </html>
